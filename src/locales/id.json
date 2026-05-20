@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "about": "TENTANG",
+    "skills": "KEAHLIAN",
+    "projects": "PROYEK",
+    "experience": "PENGALAMAN",
+    "contact": "KONTAK"
+  },
+  "hero": {
+    "tagline": "MERANCANG MASA DEPAN DIGITAL",
+    "title_1": "Rafli Aulia",
+    "title_2": "Al Giffari",
+    "subtitle": "Fullstack Developer & AI Enthusiast",
+    "btn_works": "LIHAT KARYA",
+    "btn_resume": "UNDUH RESUME"
+  },
+  "about": {
+    "badge": "ESTETIKA & LOGIKA",
+    "title_normal": "Rekayasa dengan ",
+    "title_accent": "Presisi & ",
+    "title_normal_2": "Tujuan",
+    "p1": "Dengan fondasi di Rekayasa Perangkat Lunak, saya mendekati pengembangan program sebagai sebuah seni. Perjalanan saya ditentukan oleh pengejaran keunggulan teknis yang tanpa henti, mulai dari menguasai framework PHP yang kompleks hingga merancang frontend modern berkinerja tinggi.",
+    "p2": "Fokus saya saat ini terletak pada Integrasi AI menjembatani celah antara aplikasi statis dan ekosistem digital yang adaptif serta cerdas. Setiap baris kode yang saya tulis adalah komitmen terhadap performa dan skalabilitas.",
+    "exp_years": "TAHUN BERKARYA",
+    "global_proj": "PROYEK GLOBAL"
+  },
+  "skills": {
+    "badge": "EVOLUSI TEKNOLOGI",
+    "title": "Kemampuan Teknis",
+    "updating": "TERUS DIPERBARUI",
+    "status": {
+      "expert": "AHLI",
+      "advanced": "MAHIR",
+      "intermediate": "MENENGAH"
+    }
+  },
+  "projects": {
+    "badge": "PORTOFOLIO",
+    "title": "Karya Pilihan",
+    "browse_archive": "LIHAT ARSIP",
+    "categories": {
+      "web_app": "APLIKASI WEB",
+      "ui_ux": "DESAIN UI/UX"
+    },
+    "links": {
+      "live": "DEMO LANGSUNG",
+      "repo": "REPOSITORI"
+    }
+  },
+  "experience": {
+    "badge": "PERJALANAN",
+    "title": "Evolusi Profesional",
+    "items": {
+      "exp_1": {
+        "date": "2023 - SEKARANG",
+        "role": "Magang Fullstack Developer",
+        "desc": "Memimpin pengembangan alat internal yang kritis terhadap performa dan dasbor skala perusahaan menggunakan ekosistem JS modern."
+      },
+      "exp_2": {
+        "date": "2023",
+        "role": "BootCamp Arsitektur Sistem",
+        "desc": "Imersi intensif ke dalam sistem terdistribusi, optimasi basis data, dan rekayasa web berkinerja tinggi."
+      }
+    }
+  },
+  "certificates": {
+    "badge": "ACCREDITATIONS",
+    "title": "Industry Credentials",
+    "view": "VIEW CREDENTIAL"
+  },
+  "contact": {
+    "badge": "GET IN TOUCH",
+    "title": "Let's create something extraordinary",
+    "form": {
+      "name": "NAMA ANDA",
+      "email": "EMAIL ANDA",
+      "message": "PESAN ANDA",
+      "send": "KIRIM PESAN"
+    }
+  },
+  "footer": {
+    "rights": "HAK CIPTA DILINDUNGI"
+  }
+}

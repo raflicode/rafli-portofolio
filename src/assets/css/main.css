@@ -1,10 +1,31 @@
 @import "tailwindcss";
 
+@theme {
+  /* Font Family - Menggunakan font sans-serif geometris bersih seperti Syne/Inter/Clash Display */
+  --font-sans: "Inter", "Poppins", sans-serif;
+
+  /* Palette Warna Figma Rafli */
+  --color-bg-dark: #050505;
+  --color-bg-card: #0d0d0d;
+  --color-accent: #e5b842; /* Emas / Amber Kuning Khas */
+  --color-accent-muted: rgba(229, 184, 66, 0.15);
+  --color-text-muted: #8e8e8f;
+  --color-border-grid: #141414;
+}
+
+/* Base Utility untuk Efek Smooth Scroll & Custom Scrollbar */
 html {
   scroll-behavior: smooth;
+  background-color: var(--color-bg-dark);
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Efek Glow Tipis untuk Border */
+.gold-border-glow {
+  border: 1px solid rgba(229, 184, 66, 0.3);
+  box-shadow: 0 0 15px rgba(229, 184, 66, 0.05);
 }

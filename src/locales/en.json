@@ -1,0 +1,84 @@
+{
+  "nav": {
+    "about": "ABOUT",
+    "skills": "SKILLS",
+    "projects": "PROJECTS",
+    "experience": "EXPERIENCE",
+    "contact": "CONTACT"
+  },
+  "hero": {
+    "tagline": "ARCHITECTING DIGITAL FUTURES",
+    "title_1": "Rafli Aulia",
+    "title_2": "Al Giffari",
+    "subtitle": "Fullstack Developer & AI Enthusiast",
+    "btn_works": "VIEW WORKS",
+    "btn_resume": "DOWNLOAD RESUME"
+  },
+  "about": {
+    "badge": "AESTHETIC & LOGIC",
+    "title_normal": "Engineering with ",
+    "title_accent": "Precision & ",
+    "title_normal_2": "Purpose",
+    "p1": "With a foundation in Software Engineering, I approach development as a craft. My journey is defined by a relentless pursuit of technical excellence, from mastering complex PHP frameworks to architecting high-performance modern frontends.",
+    "p2": "My current focus lies in AI Integration, bridging the gap between static applications and intelligent, adaptive digital ecosystems. Every line of code I write is a commitment to performance and scalability.",
+    "exp_years": "YEARS OF CRAFT",
+    "global_proj": "GLOBAL PROJECTS"
+  },
+  "skills": {
+    "badge": "STACK EVOLUTION",
+    "title": "Technical Proficiency",
+    "updating": "CONTINUOUSLY UPDATING",
+    "status": {
+      "expert": "EXPERT",
+      "advanced": "ADVANCED",
+      "intermediate": "INTERMEDIATE"
+    }
+  },
+  "projects": {
+    "badge": "PORTFOLIO",
+    "title": "Selected Works",
+    "browse_archive": "BROWSE ARCHIVE",
+    "categories": {
+      "web_app": "WEB APPLICATION",
+      "ui_ux": "UI/UX DESIGN"
+    },
+    "links": {
+      "live": "LIVE DEMO",
+      "repo": "REPOSITORY"
+    }
+  },
+  "experience": {
+    "badge": "JOURNEY",
+    "title": "Professional Evolution",
+    "items": {
+      "exp_1": {
+        "date": "2023 - PRESENT",
+        "role": "Fullstack Developer Intern",
+        "desc": "Leading the development of performance-critical internal tools and enterprise-scale dashboards using modern JS ecosystems."
+      },
+      "exp_2": {
+        "date": "2023",
+        "role": "Systems Architecture BootCamp",
+        "desc": "Intensive immersion into distributed systems, database optimization, and high-performance web engineering."
+      }
+    }
+  },
+  "certificates": {
+    "badge": "ACCREDITATIONS",
+    "title": "Industry Credentials",
+    "view": "VIEW CREDENTIAL"
+  },
+  "contact": {
+    "badge": "GET IN TOUCH",
+    "title": "Let's create something extraordinary",
+    "form": {
+      "name": "YOUR NAME",
+      "email": "YOUR EMAIL",
+      "message": "YOUR MESSAGE",
+      "send": "SEND MESSAGE"
+    }
+  },
+  "footer": {
+    "rights": "ALL RIGHTS RESERVED"
+  }
+}
