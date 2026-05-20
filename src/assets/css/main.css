@@ -13,6 +13,15 @@
   --color-border-grid: #141414;
 }
 
+html:not(.dark) {
+  --color-bg-dark: #eee9dc;
+  --color-bg-card: #faf7ef;
+  --color-accent: #a87210;
+  --color-accent-muted: rgba(168, 114, 16, 0.1);
+  --color-text-muted: #686761;
+  --color-border-grid: #ded4c0;
+}
+
 /* Base Utility untuk Efek Smooth Scroll & Custom Scrollbar */
 html {
   scroll-behavior: smooth;
@@ -24,8 +33,176 @@ body {
   overflow-x: hidden;
 }
 
+html:not(.dark) body {
+  color: #25221c;
+  background:
+    radial-gradient(circle at top left, rgba(168, 114, 16, 0.09), transparent 28rem),
+    linear-gradient(180deg, #f3efe5 0%, #eee9dc 42%, #e9e2d4 100%);
+}
+
+html:not(.dark) .text-white {
+  color: #25221c !important;
+}
+
+html:not(.dark) .hover\:text-white:hover {
+  color: #25221c !important;
+}
+
+html:not(.dark) [class*="border-white"] {
+  border-color: rgba(86, 66, 32, 0.14);
+}
+
+html:not(.dark) [class*="bg-white/"] {
+  background-color: rgba(86, 66, 32, 0.045);
+}
+
+html:not(.dark) .bg-white {
+  background-color: #f6eddc !important;
+}
+
+html:not(.dark) .text-black {
+  color: #29210f !important;
+}
+
+html:not(.dark) [class*="from-bg-dark"],
+html:not(.dark) [class*="to-bg-dark"] {
+  --tw-gradient-from: rgba(238, 233, 220, 1);
+  --tw-gradient-to: rgba(238, 233, 220, 0.78);
+}
+
+html:not(.dark) .mix-blend-screen {
+  mix-blend-mode: multiply;
+  opacity: 0.12 !important;
+}
+
+html:not(.dark) .bg-bg-card {
+  box-shadow: 0 18px 50px rgba(86, 66, 32, 0.06);
+}
+
+html:not(.dark) .shadow-\[0_0_28px_rgba\(229\2c 184\2c 66\2c 0\.35\)\] {
+  box-shadow: 0 12px 28px rgba(168, 114, 16, 0.18) !important;
+}
+
+html:not(.dark) .shadow-\[0_0_24px_rgba\(255\2c 255\2c 255\2c 0\.14\)\] {
+  box-shadow: 0 10px 26px rgba(86, 66, 32, 0.13) !important;
+}
+
 /* Efek Glow Tipis untuk Border */
 .gold-border-glow {
   border: 1px solid rgba(229, 184, 66, 0.3);
   box-shadow: 0 0 15px rgba(229, 184, 66, 0.05);
+}
+
+html:not(.dark) .gold-border-glow {
+  border-color: rgba(168, 114, 16, 0.22);
+  box-shadow: 0 18px 44px rgba(86, 66, 32, 0.08);
+}
+
+.typewriter-subtitle {
+  display: inline-block;
+  width: max-content;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--color-accent);
+  animation:
+    typewriter-loop 6s steps(38, end) 0.9s infinite,
+    caret-blink 0.8s step-end infinite;
+}
+
+@keyframes typewriter-loop {
+  0%,
+  8% {
+    max-width: 0;
+  }
+
+  42%,
+  62% {
+    max-width: min(38ch, 100%);
+  }
+
+  92%,
+  100% {
+    max-width: 0;
+  }
+}
+
+@keyframes caret-blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media (max-width: 380px) {
+  .typewriter-subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+.direction-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 30px;
+  height: 30px;
+  background:
+    radial-gradient(circle, rgba(255, 246, 205, 0.9) 0%, rgba(229, 184, 66, 0.36) 26%, transparent 68%);
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  filter: blur(7px);
+  box-shadow:
+    0 0 28px rgba(229, 184, 66, 0.62),
+    0 0 58px rgba(229, 184, 66, 0.24);
+  transition: opacity 520ms ease;
+  will-change: transform;
+}
+
+.direction-cursor::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  width: 96px;
+  height: 24px;
+  background: linear-gradient(90deg, transparent, rgba(229, 184, 66, 0.08), rgba(229, 184, 66, 0.56));
+  transform: translateY(-50%);
+  border-radius: 999px;
+  filter: blur(14px);
+}
+
+.direction-cursor::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  width: 64px;
+  height: 8px;
+  background: linear-gradient(90deg, transparent, rgba(255, 244, 204, 0.36));
+  transform: translateY(-50%);
+  border-radius: 999px;
+  filter: blur(6px);
+}
+
+html:not(.dark) .direction-cursor {
+  background:
+    radial-gradient(circle, rgba(255, 248, 226, 0.82) 0%, rgba(168, 114, 16, 0.22) 30%, transparent 70%);
+  box-shadow:
+    0 0 24px rgba(168, 114, 16, 0.32),
+    0 0 48px rgba(168, 114, 16, 0.16);
+}
+
+html:not(.dark) .direction-cursor::before {
+  background: linear-gradient(90deg, transparent, rgba(168, 114, 16, 0.08), rgba(168, 114, 16, 0.52));
+}
+
+html:not(.dark) .direction-cursor::after {
+  background: linear-gradient(90deg, transparent, rgba(255, 248, 226, 0.75));
+}
+
+@media (hover: none), (pointer: coarse) {
+  .direction-cursor {
+    display: none;
+  }
 }

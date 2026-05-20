@@ -4,12 +4,12 @@
     "skills": "SKILLS",
     "projects": "PROJECTS",
     "experience": "EXPERIENCE",
+    "certificates": "CERTIFICATES",
     "contact": "CONTACT"
   },
   "hero": {
     "tagline": "ARCHITECTING DIGITAL FUTURES",
-    "title_1": "Rafli Aulia",
-    "title_2": "Al Giffari",
+    "title_1": "Rafli Aulia Al Giffari",
     "subtitle": "Fullstack Developer & AI Enthusiast",
     "btn_works": "VIEW WORKS",
     "btn_resume": "DOWNLOAD RESUME"
@@ -42,6 +42,12 @@
       "web_app": "WEB APPLICATION",
       "ui_ux": "UI/UX DESIGN"
     },
+    "items": {
+      "kami_yayuk": {
+        "title": "Kami Yayuk MUA",
+        "description": "A high-fidelity web-based booking platform for professional makeup artists. Features a dynamic service catalog, integrated calendar management, and automated client notifications."
+      }
+    },
     "links": {
       "live": "LIVE DEMO",
       "repo": "REPOSITORY"
@@ -66,11 +72,25 @@
   "certificates": {
     "badge": "ACCREDITATIONS",
     "title": "Industry Credentials",
-    "view": "VIEW CREDENTIAL"
+    "view": "VIEW CREDENTIAL",
+    "items": {
+      "cert_1": {
+        "title": "Advanced Fullstack Web Development",
+        "issuer": "HackerRank",
+        "date": "2025"
+      },
+      "cert_2": {
+        "title": "Generative AI Engineering Foundations",
+        "issuer": "DeepLearning.AI",
+        "date": "2025"
+      }
+    }
   },
   "contact": {
     "badge": "GET IN TOUCH",
     "title": "Let's create something extraordinary",
+    "title_normal": "Let's create something",
+    "title_accent": "extraordinary.",
     "form": {
       "name": "YOUR NAME",
       "email": "YOUR EMAIL",
@@ -79,6 +99,7 @@
     }
   },
   "footer": {
-    "rights": "ALL RIGHTS RESERVED"
+    "rights": "ALL RIGHTS RESERVED",
+    "top": "TOP"
   }
 }

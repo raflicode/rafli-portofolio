@@ -4,12 +4,12 @@
     "skills": "KEAHLIAN",
     "projects": "PROYEK",
     "experience": "PENGALAMAN",
+    "certificates": "SERTIFIKAT",
     "contact": "KONTAK"
   },
   "hero": {
     "tagline": "MERANCANG MASA DEPAN DIGITAL",
-    "title_1": "Rafli Aulia",
-    "title_2": "Al Giffari",
+    "title_1": "Rafli Aulia Al Giffari",
     "subtitle": "Fullstack Developer & AI Enthusiast",
     "btn_works": "LIHAT KARYA",
     "btn_resume": "UNDUH RESUME"
@@ -42,6 +42,12 @@
       "web_app": "APLIKASI WEB",
       "ui_ux": "DESAIN UI/UX"
     },
+    "items": {
+      "kami_yayuk": {
+        "title": "Kami Yayuk MUA",
+        "description": "Platform booking berbasis web untuk makeup artist profesional, lengkap dengan katalog layanan dinamis, manajemen kalender, dan notifikasi klien otomatis."
+      }
+    },
     "links": {
       "live": "DEMO LANGSUNG",
       "repo": "REPOSITORI"
@@ -64,13 +70,27 @@
     }
   },
   "certificates": {
-    "badge": "ACCREDITATIONS",
-    "title": "Industry Credentials",
-    "view": "VIEW CREDENTIAL"
+    "badge": "SERTIFIKASI",
+    "title": "Kredensial Industri",
+    "view": "LIHAT SERTIFIKAT",
+    "items": {
+      "cert_1": {
+        "title": "Pengembangan Web Fullstack Lanjutan",
+        "issuer": "HackerRank",
+        "date": "2025"
+      },
+      "cert_2": {
+        "title": "Dasar Rekayasa Generative AI",
+        "issuer": "DeepLearning.AI",
+        "date": "2025"
+      }
+    }
   },
   "contact": {
-    "badge": "GET IN TOUCH",
-    "title": "Let's create something extraordinary",
+    "badge": "HUBUNGI SAYA",
+    "title": "Mari buat sesuatu yang luar biasa",
+    "title_normal": "Mari buat sesuatu yang",
+    "title_accent": "luar biasa.",
     "form": {
       "name": "NAMA ANDA",
       "email": "EMAIL ANDA",
@@ -79,6 +99,7 @@
     }
   },
   "footer": {
-    "rights": "HAK CIPTA DILINDUNGI"
+    "rights": "HAK CIPTA DILINDUNGI",
+    "top": "ATAS"
   }
 }

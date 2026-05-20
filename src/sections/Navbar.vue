@@ -22,6 +22,7 @@ const changeLang = (lang) => {
       <a href="#skills" class="hover:text-white transition-colors">{{ t('nav.skills') }}</a>
       <a href="#projects" class="hover:text-white transition-colors">{{ t('nav.projects') }}</a>
       <a href="#experience" class="hover:text-white transition-colors">{{ t('nav.experience') }}</a>
+      <a href="#certificates" class="hover:text-white transition-colors">{{ t('nav.certificates') }}</a>
       <a href="#contact" class="hover:text-white transition-colors">{{ t('nav.contact') }}</a>
     </div>
 

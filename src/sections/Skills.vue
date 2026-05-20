@@ -30,15 +30,14 @@ const skillsData = [
 onMounted(() => {
   const ctx = gsap.context(() => {
     gsap.from('.skill-card', {
-      opacity: 0,
       scale: 0.95,
       y: 20,
       duration: 0.6,
       stagger: 0.08,
       scrollTrigger: {
         trigger: skillsSection.value,
-        start: 'top 75%',
-        toggleActions: 'play none none reverse'
+        start: 'top 90%',
+        toggleActions: 'play none none none'
       }
     })
   }, skillsSection.value)
@@ -67,11 +66,11 @@ onMounted(() => {
         </div>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-5 border-t border-l border-white/5">
+      <div class="grid grid-cols-2 md:grid-cols-5 border-t border-l border-white/10">
         <div 
           v-for="(skill, index) in skillsData" 
           :key="index"
-          class="skill-card group relative bg-bg-card/30 border-r border-b border-white/5 p-8 flex flex-col justify-between items-start aspect-square transition-all duration-500 hover:bg-white/[0.02]"
+          class="skill-card group relative bg-bg-card border-r border-b border-white/10 p-8 flex flex-col justify-between items-start aspect-square transition-all duration-500 hover:border-accent/40 hover:bg-accent-muted"
         >
           <span class="text-[10px] font-bold tracking-widest text-text-muted group-hover:text-accent transition-colors">
             {{ skill.label }}

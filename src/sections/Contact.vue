@@ -40,7 +40,7 @@ onMounted(() => {
       <div class="lg:col-span-5">
         <p class="contact-reveal text-accent text-[10px] font-bold tracking-[0.4em] uppercase mb-4">{{ t('contact.badge') }}</p>
         <h2 class="contact-reveal text-3xl md:text-5xl font-black tracking-tight text-white leading-tight font-sans">
-          Let's create something <span class="text-accent italic font-medium">extraordinary.</span>
+          {{ t('contact.title_normal') }} <span class="text-accent italic font-medium">{{ t('contact.title_accent') }}</span>
         </h2>
       </div>
 
@@ -66,7 +66,7 @@ onMounted(() => {
           </label>
         </div>
 
-        <button type="submit" class="group self-start bg-white text-bg-dark font-bold text-xs tracking-widest px-8 py-4 flex items-center gap-2 hover:bg-accent hover:text-bg-dark transition-all duration-300 cursor-pointer">
+        <button type="submit" class="group self-start bg-white text-black font-bold text-xs tracking-widest px-8 py-4 flex items-center gap-2 hover:bg-accent transition-all duration-300 cursor-pointer">
           <span>{{ t('contact.form.send') }}</span>
           <ArrowRight :size="14" class="group-hover:translate-x-1 transition-transform" />
         </button>

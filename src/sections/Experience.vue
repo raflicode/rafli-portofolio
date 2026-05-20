@@ -80,19 +80,19 @@ onMounted(() => {
         >
           <div class="w-full flex" :class="index % 2 === 0 ? 'md:justify-start md:pr-12' : 'md:justify-end md:pl-12 md:order-2'">
             
-            <div class="relative w-full md:max-w-[400px] bg-bg-card p-8 border border-white/5 hover:border-accent/30 transition-colors duration-500 group">
+            <div class="relative w-full md:max-w-[400px] bg-bg-card p-8 border border-white/10 hover:border-accent/30 transition-colors duration-500 group overflow-hidden">
               <div 
-                class="absolute bottom-4 right-6 text-7xl font-black text-white/[0.02] tracking-tighter select-none font-sans group-hover:text-white/[0.04] transition-colors duration-500"
-                :class="index % 2 === 0 ? 'right-6' : 'left-6 text-left'"
+                class="absolute top-5 text-5xl md:text-6xl font-black text-accent/[0.08] tracking-tighter select-none font-sans group-hover:text-accent/[0.14] transition-colors duration-500"
+                :class="index % 2 === 0 ? 'right-6 text-right' : 'left-6 text-left'"
               >
                 {{ item.id }}
               </div>
 
-              <span class="text-[10px] font-bold tracking-widest text-accent mb-3 block">
+              <span class="relative z-10 text-[10px] font-bold tracking-widest text-accent mb-3 block">
                 {{ t(`experience.items.${item.key}.date`) }}
               </span>
 
-              <h4 class="text-base md:text-lg font-black tracking-tight text-white mb-4 font-sans">
+              <h4 class="relative z-10 text-base md:text-lg font-black tracking-tight text-white mb-4 font-sans">
                 {{ t(`experience.items.${item.key}.role`) }}
               </h4>
 

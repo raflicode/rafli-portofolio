@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -15,6 +15,65 @@ import Footer from './sections/Footer.vue'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const cursorRef = ref(null)
+let cursorIdleTimer = null
+let cursorAnimationFrame = null
+const cursorTarget = { x: 0, y: 0 }
+const cursorPosition = { x: 0, y: 0 }
+let cursorAngle = 0
+let cursorInitialized = false
+let cursorVisible = false
+
+const renderDirectionalCursor = () => {
+  if (!cursorRef.value) return
+
+  const dx = cursorTarget.x - cursorPosition.x
+  const dy = cursorTarget.y - cursorPosition.y
+
+  cursorPosition.x += dx * 0.18
+  cursorPosition.y += dy * 0.18
+
+  if (Math.abs(dx) > 0.2 || Math.abs(dy) > 0.2) {
+    const targetAngle = Math.atan2(dy, dx)
+    let angleDiff = targetAngle - cursorAngle
+
+    if (angleDiff > Math.PI) angleDiff -= Math.PI * 2
+    if (angleDiff < -Math.PI) angleDiff += Math.PI * 2
+
+    cursorAngle += angleDiff * 0.22
+  }
+
+  cursorRef.value.style.transform = `translate3d(${cursorPosition.x}px, ${cursorPosition.y}px, 0) translate(-50%, -50%) rotate(${cursorAngle}rad)`
+  cursorAnimationFrame = window.requestAnimationFrame(renderDirectionalCursor)
+}
+
+const moveDirectionalCursor = (event) => {
+  if (!cursorRef.value || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
+
+  cursorTarget.x = event.clientX
+  cursorTarget.y = event.clientY
+
+  if (!cursorInitialized) {
+    cursorPosition.x = cursorTarget.x
+    cursorPosition.y = cursorTarget.y
+    cursorInitialized = true
+  }
+
+  if (!cursorVisible) {
+    cursorVisible = true
+    cursorRef.value.style.opacity = '1'
+  }
+
+  window.clearTimeout(cursorIdleTimer)
+  cursorIdleTimer = window.setTimeout(hideDirectionalCursor, 420)
+}
+
+const hideDirectionalCursor = () => {
+  if (cursorRef.value) cursorRef.value.style.opacity = '0'
+  cursorVisible = false
+  window.clearTimeout(cursorIdleTimer)
+}
+
 onMounted(() => {
   // Global reveal animation untuk section-section yang membutuhkan trigger scroll tambahan
   gsap.utils.toArray('.global-reveal').forEach((el) => {
@@ -29,11 +88,23 @@ onMounted(() => {
       }
     })
   })
+
+  window.addEventListener('mousemove', moveDirectionalCursor)
+  window.addEventListener('mouseleave', hideDirectionalCursor)
+  cursorAnimationFrame = window.requestAnimationFrame(renderDirectionalCursor)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('mousemove', moveDirectionalCursor)
+  window.removeEventListener('mouseleave', hideDirectionalCursor)
+  window.clearTimeout(cursorIdleTimer)
+  window.cancelAnimationFrame(cursorAnimationFrame)
 })
 </script>
 
 <template>
   <div class="min-h-screen bg-bg-dark text-white font-sans transition-colors duration-300 antialiased selection:bg-accent selection:text-bg-dark">
+    <div ref="cursorRef" class="direction-cursor" aria-hidden="true"></div>
     <Navbar />
     
     <main>

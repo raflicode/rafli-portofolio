@@ -11,7 +11,7 @@ const currentYear = new Date().getFullYear()
         © {{ currentYear }} RAFLI AULIA AL GIFFARI. {{ t('footer.rights') }}
       </div>
       <div class="flex gap-8">
-        <a href="#about" class="hover:text-white transition-colors">TOP</a>
+        <a href="#about" class="hover:text-white transition-colors">{{ t('footer.top') }}</a>
         <a href="https://github.com/rafliaulia" target="_blank" class="hover:text-white transition-colors">GITHUB</a>
       </div>
     </div>

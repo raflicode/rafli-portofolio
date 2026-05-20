@@ -13,8 +13,7 @@ const { t } = useI18n()
 // Data Array Projects sesuai instruksi & deskripsi Figma kamu
 const featuredProjects = ref([
   {
-    title: 'Kami Yayuk MUA',
-    description: 'A high-fidelity web-based booking platform for professional makeup artists. Features a dynamic service catalog, integrated calendar management, and automated client notifications.',
+    key: 'kami_yayuk',
     image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200', // Gunakan path aset aslimu nanti
     categories: ['web_app', 'ui_ux'],
     techStack: ['PHP', 'LARAVEL', 'VUE.JS', 'TAILWIND'],

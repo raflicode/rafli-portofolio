@@ -19,7 +19,7 @@ defineProps({
       <div class="relative overflow-hidden aspect-[16/10] w-full bg-slate-900">
         <img 
           :src="project.image" 
-          :alt="project.title" 
+          :alt="t(`projects.items.${project.key}.title`)" 
           class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-102 transition-all duration-700 ease-out"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-bg-dark/40 to-transparent pointer-events-none"></div>
@@ -38,11 +38,11 @@ defineProps({
       </div>
 
       <h3 class="text-2xl md:text-3xl font-black tracking-tight text-white mb-6 font-sans group-hover:text-accent transition-colors">
-        {{ project.title }}
+        {{ t(`projects.items.${project.key}.title`) }}
       </h3>
 
       <p class="text-text-muted text-sm md:text-base leading-relaxed tracking-wide mb-8 max-w-xl">
-        {{ project.description }}
+        {{ t(`projects.items.${project.key}.description`) }}
       </p>
 
       <div class="flex flex-wrap gap-x-4 gap-y-2 text-[10px] font-extrabold tracking-widest text-text-muted/60 mb-10 border-b border-white/5 pb-4 w-full">
