@@ -14,11 +14,15 @@ const { t } = useI18n()
 const featuredProjects = ref([
   {
     key: 'kami_yayuk',
-    image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200', // Gunakan path aset aslimu nanti
+    images: [
+      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200',
+      'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200',
+      'https://images.unsplash.com/photo-161153273656-6dadb2a7b5a5?q=80&w=1200'
+    ],
     categories: ['web_app', 'ui_ux'],
-    techStack: ['PHP', 'LARAVEL', 'VUE.JS', 'TAILWIND'],
-    liveUrl: '#',
-    repoUrl: 'https://github.com/rafliaulia'
+    techStack: ['PHP', 'MySQL','Bootstrap'],
+    liveUrl: 'https://youtu.be/NFY0su55GA8',
+    repoUrl: 'https://github.com/raflicode/project-mua-final.git'
   }
 ])
 

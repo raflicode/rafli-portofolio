@@ -52,7 +52,7 @@ onMounted(() => {
         </a>
 
         <a 
-          href="/cv.pdf" 
+          href="/cv_rafli.pdf" 
           download
           class="hero-btn group min-h-12 w-full sm:w-auto bg-white text-black hover:bg-accent border border-white shadow-[0_0_24px_rgba(255,255,255,0.14)] font-bold text-xs tracking-widest px-8 py-4 flex items-center justify-center gap-2 transition-all duration-300"
         >
@@ -62,11 +62,11 @@ onMounted(() => {
       </div>
 
       <div class="flex items-center gap-8 text-[11px] font-bold tracking-widest text-text-muted">
-        <a href="mailto:hello@rafliaulia.dev" class="hero-social flex items-center gap-2 hover:text-white transition-colors group">
+        <a href="mailto:rafli.giffari06@gmail.com" class="hero-social flex items-center gap-2 hover:text-white transition-colors group">
           <Mail :size="12" class="text-accent" />
           <span>EMAIL</span>
         </a>
-        <a href="https://github.com/rafliaulia" target="_blank" class="hero-social flex items-center gap-2 hover:text-white transition-colors group">
+        <a href="https://github.com/raflicode" target="_blank" class="hero-social flex items-center gap-2 hover:text-white transition-colors group">
           <Github :size="12" class="text-accent" />
           <span>GITHUB</span>
         </a>

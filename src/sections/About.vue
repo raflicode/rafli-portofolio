@@ -55,22 +55,22 @@ onMounted(() => {
 
         <div class="about-reveal flex gap-16 pt-4 border-t border-white/5 w-full">
           <div>
-            <h3 class="text-3xl md:text-4xl font-light text-accent tracking-tight">3+</h3>
+            <h3 class="text-3xl md:text-4xl font-light text-accent tracking-tight">4+</h3>
             <p class="text-[10px] font-bold tracking-widest text-text-muted mt-1">{{ t('about.exp_years') }}</p>
           </div>
-          <div>
+          <!-- <div>
             <h3 class="text-3xl md:text-4xl font-light text-accent tracking-tight">24+</h3>
             <p class="text-[10px] font-bold tracking-widest text-text-muted mt-1">{{ t('about.global_proj') }}</p>
-          </div>
+          </div> -->
         </div>
       </div>
 
       <div class="lg:col-span-5 about-reveal flex justify-center lg:justify-end w-full">
         <div class="relative w-full max-w-[360px] aspect-[4/5] p-2 gold-border-glow bg-bg-card">
           <img 
-            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600" 
+            src="/foto_rafli.jpeg" 
             alt="Rafli Aulia Al Giffari" 
-            class="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 transition-all duration-700"
+            class="w-full h-full object-cover brightness-90 rounded-lg gold-border-glow"
           />
         </div>
       </div>

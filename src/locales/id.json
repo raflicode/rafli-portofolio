@@ -44,8 +44,8 @@
     },
     "items": {
       "kami_yayuk": {
-        "title": "Kami Yayuk MUA",
-        "description": "Platform booking berbasis web untuk makeup artist profesional, lengkap dengan katalog layanan dinamis, manajemen kalender, dan notifikasi klien otomatis."
+        "title": "SI-MAKEUP",
+        "description": "Platform booking berbasis web yang dikembangkan untuk jasa makeup profesional. Sistem memungkinkan pelanggan melihat layanan, melakukan reservasi, verifikasi OTP, mengirim konfirmasi pembayaran, serta memantau status booking melalui sistem manajemen terintegrasi."
       }
     },
     "links": {
@@ -58,14 +58,19 @@
     "title": "Evolusi Profesional",
     "items": {
       "exp_1": {
-        "date": "2023 - SEKARANG",
-        "role": "Magang Fullstack Developer",
-        "desc": "Memimpin pengembangan alat internal yang kritis terhadap performa dan dasbor skala perusahaan menggunakan ekosistem JS modern."
+        "date": "2025 - Sekarang",
+        "role": "Himpunan Mahasiswa Jurusan Teknologi Informasi (HMJ-TI)",
+        "desc": "Berpartisipasi dalam kegiatan akademik dan organisasi, berkolaborasi dengan sesama mahasiswa dalam program terkait teknologi, dan membantu dalam perencanaan inisiatif pengembangan akademik."
       },
       "exp_2": {
-        "date": "2023",
-        "role": "BootCamp Arsitektur Sistem",
-        "desc": "Imersi intensif ke dalam sistem terdistribusi, optimasi basis data, dan rekayasa web berkinerja tinggi."
+        "date": "2024 - 2025",
+        "role": "Magang Administrasi Aset & Inventaris - DPRD Banjarbaru",
+        "desc": "Membantu dalam pencatatan dan pengelolaan data aset dan inventaris kantor, menjaga dokumentasi yang akurat, dan mendukung proses administrasi terkait manajemen aset."
+      },
+      "exp_3": {
+        "date": "2022 - 2025",
+        "role": "Dewan Ambalan",
+        "desc": "Berpartisipasi dalam kegiatan kepramukaan dan pengembangan kepemimpinan, membantu dalam penyelenggaraan acara, dan mendukung inisiatif pembangunan karakter dan pengabdian masyarakat."
       }
     }
   },

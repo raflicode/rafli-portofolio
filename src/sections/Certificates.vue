@@ -11,8 +11,7 @@ const certSection = ref(null)
 const { t } = useI18n()
 
 const certificates = [
-  { key: 'cert_1', url: '#' },
-  { key: 'cert_2', url: '#' }
+  { key: 'cert_1', url: '/certifikat_figma.pdf' }
 ]
 
 onMounted(() => {

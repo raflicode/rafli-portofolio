@@ -1,6 +1,10 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
-import { ExternalLink, Github } from 'lucide-vue-next'
+import { ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-vue-next'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Autoplay, Navigation } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
 
 const { t } = useI18n()
 
@@ -10,20 +14,39 @@ defineProps({
     required: true
   }
 })
+
+const modules = [Autoplay, Navigation]
 </script>
 
 <template>
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
     
     <div class="lg:col-span-7 w-full overflow-hidden border border-white/5 bg-bg-card p-3 group">
-      <div class="relative overflow-hidden aspect-[16/10] w-full bg-slate-900">
-        <img 
-          :src="project.image" 
-          :alt="t(`projects.items.${project.key}.title`)" 
-          class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-102 transition-all duration-700 ease-out"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-bg-dark/40 to-transparent pointer-events-none"></div>
-      </div>
+      <Swiper
+        :modules="modules"
+        :autoplay="{ delay: 4000, disableOnInteraction: false }"
+        :navigation="{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }"
+        :loop="true"
+        class="relative w-full"
+      >
+        <SwiperSlide v-for="(image, idx) in (Array.isArray(project.images) ? project.images : [project.image])" :key="idx">
+          <div class="relative overflow-hidden aspect-[16/10] w-full bg-slate-900">
+            <img 
+              :src="image" 
+              :alt="`${t(`projects.items.${project.key}.title`)} - Slide ${idx + 1}`"
+              class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-102 transition-all duration-700 ease-out"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-bg-dark/40 to-transparent pointer-events-none"></div>
+          </div>
+        </SwiperSlide>
+        
+        <div class="swiper-button-prev absolute left-4 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white/10 hover:bg-white/20 rounded-full p-2 transition-all">
+          <ChevronLeft :size="20" class="text-white" />
+        </div>
+        <div class="swiper-button-next absolute right-4 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white/10 hover:bg-white/20 rounded-full p-2 transition-all">
+          <ChevronRight :size="20" class="text-white" />
+        </div>
+      </Swiper>
     </div>
 
     <div class="lg:col-span-5 flex flex-col items-start w-full">

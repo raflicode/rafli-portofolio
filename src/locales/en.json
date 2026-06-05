@@ -44,8 +44,8 @@
     },
     "items": {
       "kami_yayuk": {
-        "title": "Kami Yayuk MUA",
-        "description": "A high-fidelity web-based booking platform for professional makeup artists. Features a dynamic service catalog, integrated calendar management, and automated client notifications."
+        "title": "SI-MAKEUP",
+        "description": "A web-based booking platform developed for professional makeup artists. The system enables customers to browse services, schedule appointments, verify bookings through OTP authentication, submit payment confirmations, and track booking status through an integrated management system."
       }
     },
     "links": {
@@ -58,14 +58,19 @@
     "title": "Professional Evolution",
     "items": {
       "exp_1": {
-        "date": "2023 - PRESENT",
-        "role": "Fullstack Developer Intern",
-        "desc": "Leading the development of performance-critical internal tools and enterprise-scale dashboards using modern JS ecosystems."
+        "date": "2025 - PRESENT",
+        "role": "Information Technology Student Association (HMJ-TI)",
+        "desc": "Participated in academic and organizational activities, collaborated with fellow students in technology-related programs, and assisted in planning academic development initiatives."
       },
       "exp_2": {
         "date": "2023",
-        "role": "Systems Architecture BootCamp",
-        "desc": "Intensive immersion into distributed systems, database optimization, and high-performance web engineering."
+        "role": "Asset & Inventory Administration Intern - DPRD Banjarbaru",
+        "desc": "Assisted in recording and managing office assets and inventory data, maintained accurate documentation, and supported administrative processes related to asset management."
+      },
+      "exp_3": {
+        "date": "2022 - 2025",
+        "role": "Dewan Ambalan",
+        "desc": "Participated in scouting and leadership development activities, assisted in organizing events, and supported character-building and community service initiatives."
       }
     }
   },
@@ -75,13 +80,8 @@
     "view": "VIEW CREDENTIAL",
     "items": {
       "cert_1": {
-        "title": "Advanced Fullstack Web Development",
-        "issuer": "HackerRank",
-        "date": "2025"
-      },
-      "cert_2": {
-        "title": "Generative AI Engineering Foundations",
-        "issuer": "DeepLearning.AI",
+        "title": "UI/UX Design With Figma",
+        "issuer": "Figma Camp Indonesia Batch 6",
         "date": "2025"
       }
     }

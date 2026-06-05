@@ -12,7 +12,7 @@ const currentYear = new Date().getFullYear()
       </div>
       <div class="flex gap-8">
         <a href="#about" class="hover:text-white transition-colors">{{ t('footer.top') }}</a>
-        <a href="https://github.com/rafliaulia" target="_blank" class="hover:text-white transition-colors">GITHUB</a>
+        <a href="https://github.com/raflicode" target="_blank" class="hover:text-white transition-colors">GITHUB</a>
       </div>
     </div>
   </footer>

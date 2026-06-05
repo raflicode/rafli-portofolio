@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { ArrowRight } from 'lucide-vue-next'
+import emailjs from '@emailjs/browser'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -12,8 +13,33 @@ const { t } = useI18n()
 
 const formData = ref({ name: '', email: '', message: '' })
 
-const handleSubmit = () => {
-  alert(`Message sent by ${formData.value.name}! (Simulated)`)
+const handleSubmit = async () => {
+  try {
+    // Replace these env variables in your .env file at project root:
+    // VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+    if (!serviceId || !templateId || !publicKey) {
+      alert('Email service not configured. Please set EmailJS env variables.')
+      return
+    }
+
+    const templateParams = {
+      from_name: formData.value.name,
+      from_email: formData.value.email,
+      message: formData.value.message
+    }
+
+    await emailjs.send(serviceId, templateId, templateParams, publicKey)
+
+    alert('Pesan berhasil dikirim! Terima kasih.')
+    formData.value = { name: '', email: '', message: '' }
+  } catch (err) {
+    console.error('EmailJS error:', err)
+    alert('Gagal mengirim pesan. Silakan coba lagi nanti.')
+  }
 }
 
 onMounted(() => {
@@ -75,3 +101,9 @@ onMounted(() => {
     </div>
   </section>
 </template>
+
+<!--
+VITE_EMAILJS_SERVICE_ID=service_lev7let
+VITE_EMAILJS_TEMPLATE_ID=template_xxx
+VITE_EMAILJS_PUBLIC_KEY=public_xxx
+-->
