@@ -12,8 +12,8 @@ const changeLang = (lang) => {
 </script>
 
 <template>
-  <nav class="fixed top-0 left-0 w-full z-50 bg-bg-dark/80 backdrop-blur-md border-b border-white/5 px-6 lg:px-16 py-5 flex items-center justify-between">
-    <a href="#" class="text-xl font-black tracking-tighter text-white font-sans">
+  <nav class="fixed top-0 left-0 w-full z-50 bg-bg-dark/85 backdrop-blur-md border-b border-white/5 px-4 sm:px-6 lg:px-16 py-3.5 sm:py-5 flex items-center justify-between">
+    <a href="#" class="text-base sm:text-xl font-black tracking-tighter text-white font-sans">
       RAFLI.AULIA
     </a>
 
@@ -26,8 +26,8 @@ const changeLang = (lang) => {
       <a href="#contact" class="hover:text-white transition-colors">{{ t('nav.contact') }}</a>
     </div>
 
-    <div class="flex items-center gap-4">
-      <div class="bg-bg-card border border-white/10 rounded-full px-3 py-1 flex items-center gap-2 text-[10px] font-bold tracking-tight">
+    <div class="flex items-center gap-3 sm:gap-4">
+      <div class="bg-bg-card border border-white/10 rounded-full px-2.5 sm:px-3 py-1 flex items-center gap-2 text-[10px] font-bold tracking-tight">
         <button 
           @click="changeLang('en')" 
           :class="locale === 'en' ? 'text-accent' : 'text-text-muted'" 
@@ -41,7 +41,7 @@ const changeLang = (lang) => {
         >ID</button>
       </div>
 
-      <button @click="toggleDarkMode" class="text-text-muted hover:text-white transition-colors cursor-pointer">
+      <button @click="toggleDarkMode" class="h-8 w-8 flex items-center justify-center text-text-muted hover:text-white transition-colors cursor-pointer">
         <Sun v-if="!isDark" :size="18" />
         <Moon v-else :size="18" />
       </button>

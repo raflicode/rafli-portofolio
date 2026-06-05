@@ -14,12 +14,12 @@
 }
 
 html:not(.dark) {
-  --color-bg-dark: #eee9dc;
-  --color-bg-card: #faf7ef;
-  --color-accent: #a87210;
-  --color-accent-muted: rgba(168, 114, 16, 0.1);
-  --color-text-muted: #686761;
-  --color-border-grid: #ded4c0;
+  --color-bg-dark: #f5f0e7;
+  --color-bg-card: #fffcf5;
+  --color-accent: #9f6b0f;
+  --color-accent-muted: rgba(159, 107, 15, 0.1);
+  --color-text-muted: #5d574d;
+  --color-border-grid: #d8cbb6;
 }
 
 /* Base Utility untuk Efek Smooth Scroll & Custom Scrollbar */
@@ -36,8 +36,8 @@ body {
 html:not(.dark) body {
   color: #25221c;
   background:
-    radial-gradient(circle at top left, rgba(168, 114, 16, 0.09), transparent 28rem),
-    linear-gradient(180deg, #f3efe5 0%, #eee9dc 42%, #e9e2d4 100%);
+    radial-gradient(circle at top left, rgba(159, 107, 15, 0.08), transparent 28rem),
+    linear-gradient(180deg, #fbf8f0 0%, #f5f0e7 42%, #eee5d7 100%);
 }
 
 html:not(.dark) .text-white {
@@ -49,11 +49,11 @@ html:not(.dark) .hover\:text-white:hover {
 }
 
 html:not(.dark) [class*="border-white"] {
-  border-color: rgba(86, 66, 32, 0.14);
+  border-color: rgba(72, 55, 30, 0.16);
 }
 
 html:not(.dark) [class*="bg-white/"] {
-  background-color: rgba(86, 66, 32, 0.045);
+  background-color: rgba(72, 55, 30, 0.06);
 }
 
 html:not(.dark) .bg-white {
@@ -66,17 +66,44 @@ html:not(.dark) .text-black {
 
 html:not(.dark) [class*="from-bg-dark"],
 html:not(.dark) [class*="to-bg-dark"] {
-  --tw-gradient-from: rgba(238, 233, 220, 1);
-  --tw-gradient-to: rgba(238, 233, 220, 0.78);
+  --tw-gradient-from: rgba(245, 240, 231, 1);
+  --tw-gradient-to: rgba(245, 240, 231, 0.78);
 }
 
 html:not(.dark) .mix-blend-screen {
   mix-blend-mode: multiply;
-  opacity: 0.12 !important;
+  opacity: 0.16 !important;
 }
 
 html:not(.dark) .bg-bg-card {
-  box-shadow: 0 18px 50px rgba(86, 66, 32, 0.06);
+  box-shadow: 0 18px 48px rgba(74, 57, 31, 0.07);
+}
+
+html:not(.dark) .light-surface {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 252, 245, 0.96)),
+    var(--color-bg-card);
+}
+
+html:not(.dark) .light-image-frame {
+  background: #fffaf1;
+  border-color: rgba(72, 55, 30, 0.2);
+  box-shadow: 0 18px 46px rgba(74, 57, 31, 0.12);
+}
+
+html:not(.dark) .light-image-frame img {
+  filter: brightness(1.08) contrast(1.08);
+}
+
+html:not(.dark) input,
+html:not(.dark) textarea {
+  color: #25221c;
+}
+
+html:not(.dark) input:-webkit-autofill,
+html:not(.dark) textarea:-webkit-autofill {
+  -webkit-text-fill-color: #25221c;
+  transition: background-color 9999s ease-in-out 0s;
 }
 
 html:not(.dark) .shadow-\[0_0_28px_rgba\(229\2c 184\2c 66\2c 0\.35\)\] {
@@ -135,7 +162,7 @@ html:not(.dark) .gold-border-glow {
 
 @media (max-width: 380px) {
   .typewriter-subtitle {
-    font-size: 0.95rem;
+    font-size: 0.86rem;
   }
 }
 

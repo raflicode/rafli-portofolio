@@ -60,17 +60,17 @@ onMounted(() => {
 </script>
 
 <template>
-  <section id="contact" ref="contactSection" class="w-full bg-bg-dark px-6 lg:px-20 py-32 border-b border-white/5">
-    <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+  <section id="contact" ref="contactSection" class="w-full bg-bg-dark px-4 sm:px-6 lg:px-20 py-20 md:py-32 border-b border-white/5">
+    <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
       
       <div class="lg:col-span-5">
         <p class="contact-reveal text-accent text-[10px] font-bold tracking-[0.4em] uppercase mb-4">{{ t('contact.badge') }}</p>
-        <h2 class="contact-reveal text-3xl md:text-5xl font-black tracking-tight text-white leading-tight font-sans">
+        <h2 class="contact-reveal text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-white leading-tight font-sans">
           {{ t('contact.title_normal') }} <span class="text-accent italic font-medium">{{ t('contact.title_accent') }}</span>
         </h2>
       </div>
 
-      <form @submit.prevent="handleSubmit" class="lg:col-span-7 flex flex-col gap-10 w-full contact-reveal">
+      <form @submit.prevent="handleSubmit" class="lg:col-span-7 flex flex-col gap-8 sm:gap-10 w-full contact-reveal">
         <div class="relative w-full">
           <input type="text" v-model="formData.name" required placeholder=" " class="peer w-full bg-transparent border-b border-white/10 py-3 text-sm text-white focus:outline-none focus:border-accent transition-colors" />
           <label class="absolute left-0 top-3 text-[10px] font-bold tracking-widest text-text-muted/60 pointer-events-none transition-all duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:top-3 peer-focus:top-[-16px] peer-focus:text-[10px] peer-focus:text-accent peer-[:not(:placeholder-shown)]:top-[-16px] peer-[:not(:placeholder-shown)]:text-[10px]">
@@ -92,7 +92,7 @@ onMounted(() => {
           </label>
         </div>
 
-        <button type="submit" class="group self-start bg-white text-black font-bold text-xs tracking-widest px-8 py-4 flex items-center gap-2 hover:bg-accent transition-all duration-300 cursor-pointer">
+        <button type="submit" class="group self-start bg-white text-black font-bold text-[11px] sm:text-xs tracking-widest px-6 sm:px-8 py-3.5 sm:py-4 flex items-center gap-2 hover:bg-accent transition-all duration-300 cursor-pointer">
           <span>{{ t('contact.form.send') }}</span>
           <ArrowRight :size="14" class="group-hover:translate-x-1 transition-transform" />
         </button>

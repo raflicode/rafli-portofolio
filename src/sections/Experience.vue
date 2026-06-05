@@ -61,30 +61,30 @@ onMounted(() => {
   <section 
     id="experience" 
     ref="expSection" 
-    class="w-full bg-bg-dark px-6 lg:px-20 py-32 border-b border-white/5 overflow-hidden"
+    class="w-full bg-bg-dark px-4 sm:px-6 lg:px-20 py-20 md:py-32 border-b border-white/5 overflow-hidden"
   >
     <div class="max-w-4xl mx-auto flex flex-col items-center">
       
-      <div class="text-center mb-24">
+      <div class="text-center mb-12 md:mb-24">
         <p class="exp-title-reveal text-accent text-[10px] font-bold tracking-[0.4em] uppercase mb-3">
           {{ t('experience.badge') }}
         </p>
-        <h2 class="exp-title-reveal text-3xl md:text-4xl font-black tracking-tight text-white font-sans">
+        <h2 class="exp-title-reveal text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-white font-sans">
           {{ t('experience.title') }}
         </h2>
       </div>
 
       <div class="relative w-full flex flex-col items-center">
-        <div class="absolute left-1/2 -translate-x-1/2 top-0 h-full w-[1px] bg-white/10 pointer-events-none"></div>
+        <div class="absolute left-3 md:left-1/2 md:-translate-x-1/2 top-0 h-full w-[1px] bg-white/10 pointer-events-none"></div>
 
         <div 
           v-for="(item, index) in experiences" 
           :key="index"
-          class="exp-card-reveal relative w-full flex flex-col md:flex-row items-center mb-16 last:mb-0"
+          class="exp-card-reveal relative w-full flex flex-col md:flex-row items-center mb-8 md:mb-16 last:mb-0 pl-9 md:pl-0"
         >
           <div class="w-full flex" :class="index % 2 === 0 ? 'md:justify-start md:pr-12' : 'md:justify-end md:pl-12 md:order-2'">
             
-            <div class="relative w-full md:max-w-[400px] bg-bg-card p-8 border border-white/10 hover:border-accent/30 transition-colors duration-500 group overflow-hidden">
+            <div class="relative w-full md:max-w-[400px] bg-bg-card light-surface p-5 sm:p-6 md:p-8 border border-white/10 hover:border-accent/30 transition-colors duration-500 group overflow-hidden">
               <div 
                 class="absolute top-5 text-5xl md:text-6xl font-black text-accent/[0.08] tracking-tighter select-none font-sans group-hover:text-accent/[0.14] transition-colors duration-500"
                 :class="index % 2 === 0 ? 'right-6 text-right' : 'left-6 text-left'"
@@ -107,7 +107,7 @@ onMounted(() => {
 
           </div>
 
-          <div class="absolute left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-accent border-4 border-bg-dark box-content z-20"></div>
+          <div class="absolute left-3 md:left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-accent border-4 border-bg-dark box-content z-20"></div>
 
           <div class="hidden md:block w-full" :class="index % 2 === 0 ? 'md:order-2' : 'md:order-1'"></div>
         </div>

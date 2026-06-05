@@ -30,30 +30,30 @@ onMounted(() => {
   <section 
     id="about" 
     ref="aboutSection" 
-    class="min-h-screen w-full bg-bg-dark px-6 lg:px-20 py-32 flex flex-col justify-center border-b border-white/5"
+    class="w-full bg-bg-dark px-4 sm:px-6 lg:px-20 py-20 md:py-32 flex flex-col justify-center border-b border-white/5"
   >
-    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-9 lg:gap-20 items-center">
       
       <div class="lg:col-span-7 flex flex-col items-start">
-        <div class="about-reveal flex items-center gap-2 border border-accent/30 bg-accent-muted px-3 py-1.5 mb-8">
+        <div class="about-reveal flex items-center gap-2 border border-accent/30 bg-accent-muted px-3 py-1.5 mb-6 md:mb-8">
           <span class="w-1.5 h-1.5 bg-accent"></span>
           <span class="text-[10px] font-bold tracking-widest text-accent uppercase">{{ t('about.badge') }}</span>
         </div>
 
-        <h2 class="about-reveal text-3xl md:text-5xl font-black tracking-tight text-white mb-8 leading-tight font-sans">
+        <h2 class="about-reveal text-2xl sm:text-3xl md:text-5xl font-black tracking-tight text-white mb-6 md:mb-8 leading-tight font-sans">
           {{ t('about.title_normal') }}
           <span class="text-accent italic font-medium">{{ t('about.title_accent') }}</span>
           {{ t('about.title_normal_2') }}
         </h2>
 
-        <p class="about-reveal text-text-muted text-sm md:text-base leading-relaxed tracking-wide mb-6">
+        <p class="about-reveal text-text-muted text-sm md:text-base leading-relaxed tracking-wide mb-4 md:mb-6">
           {{ t('about.p1') }}
         </p>
-        <p class="about-reveal text-text-muted text-sm md:text-base leading-relaxed tracking-wide mb-12">
+        <p class="about-reveal text-text-muted text-sm md:text-base leading-relaxed tracking-wide mb-8 md:mb-12">
           {{ t('about.p2') }}
         </p>
 
-        <div class="about-reveal flex gap-16 pt-4 border-t border-white/5 w-full">
+        <div class="about-reveal flex gap-10 sm:gap-16 pt-4 border-t border-white/5 w-full">
           <div>
             <h3 class="text-3xl md:text-4xl font-light text-accent tracking-tight">4+</h3>
             <p class="text-[10px] font-bold tracking-widest text-text-muted mt-1">{{ t('about.exp_years') }}</p>
@@ -66,11 +66,11 @@ onMounted(() => {
       </div>
 
       <div class="lg:col-span-5 about-reveal flex justify-center lg:justify-end w-full">
-        <div class="relative w-full max-w-[360px] aspect-[4/5] p-2 gold-border-glow bg-bg-card">
+        <div class="relative w-full max-w-[250px] sm:max-w-[320px] lg:max-w-[360px] aspect-[4/5] p-2 gold-border-glow bg-bg-card light-image-frame">
           <img 
             src="/foto_rafli.jpeg" 
             alt="Rafli Aulia Al Giffari" 
-            class="w-full h-full object-cover brightness-90 rounded-lg gold-border-glow"
+            class="w-full h-full object-cover brightness-95 rounded-lg gold-border-glow"
           />
         </div>
       </div>

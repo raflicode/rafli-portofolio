@@ -1,10 +1,9 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
-import { ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-vue-next'
+import { ExternalLink, Github } from 'lucide-vue-next'
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Autoplay, Navigation } from 'swiper/modules'
+import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
-import 'swiper/css/navigation'
 
 const { t } = useI18n()
 
@@ -15,42 +14,34 @@ defineProps({
   }
 })
 
-const modules = [Autoplay, Navigation]
+const modules = [Autoplay]
 </script>
 
 <template>
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 lg:gap-16 items-center w-full">
     
-    <div class="lg:col-span-7 w-full overflow-hidden border border-white/5 bg-bg-card p-3 group">
+    <div class="lg:col-span-7 w-full overflow-hidden border border-white/10 bg-bg-card light-image-frame p-2 sm:p-3 group">
       <Swiper
         :modules="modules"
         :autoplay="{ delay: 4000, disableOnInteraction: false }"
-        :navigation="{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }"
         :loop="true"
         class="relative w-full"
       >
         <SwiperSlide v-for="(image, idx) in (Array.isArray(project.images) ? project.images : [project.image])" :key="idx">
-          <div class="relative overflow-hidden aspect-[16/10] w-full bg-slate-900">
+          <div class="relative overflow-hidden aspect-[16/11] sm:aspect-[16/10] lg:aspect-[16/10] w-full bg-slate-900">
             <img 
               :src="image" 
               :alt="`${t(`projects.items.${project.key}.title`)} - Slide ${idx + 1}`"
-              class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-102 transition-all duration-700 ease-out"
+              class="w-full h-full object-cover group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-102 transition-all duration-700 ease-out"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-bg-dark/40 to-transparent pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none dark:from-black/30"></div>
           </div>
         </SwiperSlide>
-        
-        <div class="swiper-button-prev absolute left-4 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white/10 hover:bg-white/20 rounded-full p-2 transition-all">
-          <ChevronLeft :size="20" class="text-white" />
-        </div>
-        <div class="swiper-button-next absolute right-4 top-1/2 -translate-y-1/2 z-10 cursor-pointer bg-white/10 hover:bg-white/20 rounded-full p-2 transition-all">
-          <ChevronRight :size="20" class="text-white" />
-        </div>
       </Swiper>
     </div>
 
     <div class="lg:col-span-5 flex flex-col items-start w-full">
-      <div class="flex flex-wrap gap-2 mb-6">
+      <div class="flex flex-wrap gap-2 mb-4 sm:mb-6">
         <span 
           v-for="(cat, cIdx) in project.categories" 
           :key="cIdx"
@@ -60,21 +51,21 @@ const modules = [Autoplay, Navigation]
         </span>
       </div>
 
-      <h3 class="text-2xl md:text-3xl font-black tracking-tight text-white mb-6 font-sans group-hover:text-accent transition-colors">
+      <h3 class="text-xl sm:text-2xl md:text-3xl font-black tracking-tight text-white mb-4 sm:mb-6 font-sans group-hover:text-accent transition-colors">
         {{ t(`projects.items.${project.key}.title`) }}
       </h3>
 
-      <p class="text-text-muted text-sm md:text-base leading-relaxed tracking-wide mb-8 max-w-xl">
+      <p class="text-text-muted text-sm md:text-base leading-relaxed tracking-wide mb-6 sm:mb-8 max-w-xl">
         {{ t(`projects.items.${project.key}.description`) }}
       </p>
 
-      <div class="flex flex-wrap gap-x-4 gap-y-2 text-[10px] font-extrabold tracking-widest text-text-muted/60 mb-10 border-b border-white/5 pb-4 w-full">
+      <div class="flex flex-wrap gap-x-4 gap-y-2 text-[10px] font-extrabold tracking-widest text-text-muted/70 mb-7 sm:mb-10 border-b border-white/5 pb-4 w-full">
         <span v-for="(tech, tIdx) in project.techStack" :key="tIdx" class="hover:text-white transition-colors">
           {{ tech }}
         </span>
       </div>
 
-      <div class="flex items-center gap-6 text-[11px] font-bold tracking-widest">
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] font-bold tracking-widest">
         <a 
           :href="project.liveUrl" 
           target="_blank" 

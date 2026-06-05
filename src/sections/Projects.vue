@@ -15,13 +15,13 @@ const featuredProjects = ref([
   {
     key: 'kami_yayuk',
     images: [
-      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200',
-      'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200',
-      'https://images.unsplash.com/photo-161153273656-6dadb2a7b5a5?q=80&w=1200'
+      '/landing_page.jpeg',
+      '/about.jpeg',
+      '/about2.png'
     ],
     categories: ['web_app', 'ui_ux'],
     techStack: ['PHP', 'MySQL','Bootstrap'],
-    liveUrl: 'https://youtu.be/NFY0su55GA8',
+    liveUrl: 'https://si-makeup.mif.myhost.id/',
     repoUrl: 'https://github.com/raflicode/project-mua-final.git'
   }
 ])
@@ -60,16 +60,16 @@ onMounted(() => {
   <section 
     id="projects" 
     ref="projectsSection" 
-    class="w-full bg-bg-dark px-6 lg:px-20 py-32 border-b border-white/5"
+    class="w-full bg-bg-dark px-4 sm:px-6 lg:px-20 py-20 md:py-32 border-b border-white/5"
   >
     <div class="max-w-6xl mx-auto flex flex-col">
       
-      <div class="flex flex-row items-end justify-between mb-20 w-full">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 md:mb-20 w-full gap-4">
         <div>
           <p class="project-header-reveal text-accent text-[10px] font-bold tracking-[0.4em] uppercase mb-3">
             {{ t('projects.badge') }}
           </p>
-          <h2 class="project-header-reveal text-3xl md:text-4xl font-black tracking-tight text-white font-sans">
+          <h2 class="project-header-reveal text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-white font-sans">
             {{ t('projects.title') }}
           </h2>
         </div>
@@ -83,7 +83,7 @@ onMounted(() => {
         </a>
       </div>
 
-      <div class="project-item-reveal w-full flex flex-col gap-24">
+      <div class="project-item-reveal w-full flex flex-col gap-14 md:gap-24">
         <ProjectCard 
           v-for="(project, index) in featuredProjects" 
           :key="index" 

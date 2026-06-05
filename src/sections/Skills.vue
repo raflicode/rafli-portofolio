@@ -48,16 +48,16 @@ onMounted(() => {
   <section 
     id="skills" 
     ref="skillsSection" 
-    class="w-full bg-bg-dark px-6 lg:px-20 py-32 border-b border-white/5"
+    class="w-full bg-bg-dark px-4 sm:px-6 lg:px-20 py-20 md:py-32 border-b border-white/5"
   >
     <div class="max-w-6xl mx-auto">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-9 md:mb-16 gap-4">
         <div>
           <p class="text-accent text-[10px] font-bold tracking-[0.4em] uppercase mb-3">
             {{ t('skills.badge') }}
           </p>
-          <h2 class="text-3xl md:text-4xl font-black tracking-tight text-white font-sans">
+          <h2 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-white font-sans">
             {{ t('skills.title') }}
           </h2>
         </div>
@@ -66,23 +66,23 @@ onMounted(() => {
         </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 border-t border-l border-white/10">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-4 lg:gap-6 border-t border-l border-white/10">
         <div 
           v-for="(skill, index) in skillsData" 
           :key="index"
-          class="skill-card group relative bg-bg-card border-r border-b border-white/10 p-8 flex flex-col justify-between items-start aspect-square transition-all duration-500 hover:border-accent/40 hover:bg-accent-muted"
+          class="skill-card light-surface group relative bg-bg-card border-r border-b border-white/10 p-4 sm:p-6 lg:p-8 flex flex-col justify-between items-start min-h-36 sm:min-h-44 lg:aspect-square transition-all duration-500 hover:border-accent/40 hover:bg-accent-muted"
         >
           <span class="text-[10px] font-bold tracking-widest text-text-muted group-hover:text-accent transition-colors">
             {{ skill.label }}
           </span>
 
-          <div class="my-auto flex flex-col gap-4">
+          <div class="my-auto flex flex-col gap-3 sm:gap-4">
             <component 
               :is="skill.icon" 
               :size="24" 
               class="text-accent/80 group-hover:text-accent transition-transform duration-500 group-hover:scale-110" 
             />
-            <h4 class="text-sm md:text-base font-black tracking-wider text-white">
+            <h4 class="text-xs sm:text-sm md:text-base font-black tracking-wider text-white break-words">
               {{ skill.name }}
             </h4>
           </div>
