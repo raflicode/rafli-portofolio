@@ -32,6 +32,7 @@ const modules = [Autoplay]
             <img 
               :src="image" 
               :alt="`${t(`projects.items.${project.key}.title`)} - Slide ${idx + 1}`"
+              loading="lazy"
               class="w-full h-full object-cover group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-102 transition-all duration-700 ease-out"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none dark:from-black/30"></div>
@@ -68,7 +69,8 @@ const modules = [Autoplay]
       <div class="flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] font-bold tracking-widest">
         <a 
           :href="project.liveUrl" 
-          target="_blank" 
+          target="_blank"
+          rel="noopener noreferrer"
           class="flex items-center gap-2 text-white hover:text-accent transition-colors group/link"
         >
           <ExternalLink :size="14" class="text-accent group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
@@ -76,7 +78,8 @@ const modules = [Autoplay]
         </a>
         <a 
           :href="project.repoUrl" 
-          target="_blank" 
+          target="_blank"
+          rel="noopener noreferrer"
           class="flex items-center gap-2 text-text-muted hover:text-white transition-colors"
         >
           <Github :size="14" />

@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { shouldAnimate } from '../utils/motion'
 
 gsap.registerPlugin(ScrollTrigger)
 const expSection = ref(null)
@@ -26,7 +27,9 @@ const experiences = [
 ]
 
 onMounted(() => {
-  const ctx = gsap.context(() => {
+  if (!shouldAnimate()) return
+
+  gsap.context(() => {
     // Animasi Reveal Title
     gsap.from('.exp-title-reveal', {
       opacity: 0,

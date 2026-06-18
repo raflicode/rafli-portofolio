@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ProjectCard from '../components/ProjectCard.vue'
+import { shouldAnimate } from '../utils/motion'
 
 gsap.registerPlugin(ScrollTrigger)
 const projectsSection = ref(null)
@@ -27,7 +28,9 @@ const featuredProjects = ref([
 ])
 
 onMounted(() => {
-  const ctx = gsap.context(() => {
+  if (!shouldAnimate()) return
+
+  gsap.context(() => {
     // Animasi Reveal Header Proyek
     gsap.from('.project-header-reveal', {
       opacity: 0,
@@ -75,8 +78,9 @@ onMounted(() => {
         </div>
         
         <a 
-          href="https://github.com/rafliaulia" 
-          target="_blank" 
+          href="https://github.com/raflicode" 
+          target="_blank"
+          rel="noopener noreferrer"
           class="project-header-reveal text-[10px] font-black tracking-widest text-accent border-b border-accent/20 pb-1 hover:text-white hover:border-white transition-colors"
         >
           {{ t('projects.browse_archive') }}

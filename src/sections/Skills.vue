@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { shouldAnimate } from '../utils/motion'
 import { 
   Code2, FileJson, Cpu, Database, Server, 
   Layers, Terminal, Github, Figma 
@@ -28,7 +29,9 @@ const skillsData = [
 ]
 
 onMounted(() => {
-  const ctx = gsap.context(() => {
+  if (!shouldAnimate()) return
+
+  gsap.context(() => {
     gsap.from('.skill-card', {
       scale: 0.95,
       y: 20,

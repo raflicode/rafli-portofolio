@@ -3,19 +3,23 @@ import { createI18n } from 'vue-i18n'
 import App from './App.vue'
 import './assets/css/main.css'
 
-// Import database bahasa yang baru saja kamu timpa tadi
 import en from './locales/en.json'
 import id from './locales/id.json'
+import { initLocale } from './composables/useLocale'
+
+const savedLocale = initLocale()
 
 const i18n = createI18n({
-  legacy: false, // Wajib bernilai false agar kompatibel dengan <script setup>
-  locale: 'en',   // Bahasa utama saat web pertama kali dimuat
+  legacy: false,
+  locale: savedLocale,
   fallbackLocale: 'en',
   messages: {
     en,
     id
   }
 })
+
+document.documentElement.lang = savedLocale
 
 const app = createApp(App)
 app.use(i18n)

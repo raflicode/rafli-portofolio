@@ -3,12 +3,15 @@ import { onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { ArrowUpRight, Download, Mail, Github } from 'lucide-vue-next'
 import gsap from 'gsap'
+import { shouldAnimate } from '../utils/motion'
 
 const { t } = useI18n()
 const heroContainer = ref(null)
 
 onMounted(() => {
-  const ctx = gsap.context(() => {
+  if (!shouldAnimate()) return
+
+  gsap.context(() => {
     // Animasi Timeline untuk Intro Hero yang Sinematik
     const tl = gsap.timeline()
     
@@ -66,7 +69,7 @@ onMounted(() => {
           <Mail :size="12" class="text-accent" />
           <span>EMAIL</span>
         </a>
-        <a href="https://github.com/raflicode" target="_blank" class="hero-social flex items-center gap-2 hover:text-white transition-colors group">
+        <a href="https://github.com/raflicode" target="_blank" rel="noopener noreferrer" class="hero-social flex items-center gap-2 hover:text-white transition-colors group">
           <Github :size="12" class="text-accent" />
           <span>GITHUB</span>
         </a>

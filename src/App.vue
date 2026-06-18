@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -12,8 +13,12 @@ import Experience from './sections/Experience.vue'
 import Certificates from './sections/Certificates.vue'
 import Contact from './sections/Contact.vue'
 import Footer from './sections/Footer.vue'
+import { useSeo } from './composables/useSeo'
 
 gsap.registerPlugin(ScrollTrigger)
+
+const { t } = useI18n()
+useSeo()
 
 const cursorRef = ref(null)
 let cursorIdleTimer = null
@@ -23,9 +28,10 @@ const cursorPosition = { x: 0, y: 0 }
 let cursorAngle = 0
 let cursorInitialized = false
 let cursorVisible = false
+let reducedMotion = false
 
 const renderDirectionalCursor = () => {
-  if (!cursorRef.value) return
+  if (!cursorRef.value || reducedMotion) return
 
   const dx = cursorTarget.x - cursorPosition.x
   const dy = cursorTarget.y - cursorPosition.y
@@ -48,7 +54,7 @@ const renderDirectionalCursor = () => {
 }
 
 const moveDirectionalCursor = (event) => {
-  if (!cursorRef.value || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
+  if (!cursorRef.value || reducedMotion || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
 
   cursorTarget.x = event.clientX
   cursorTarget.y = event.clientY
@@ -75,23 +81,26 @@ const hideDirectionalCursor = () => {
 }
 
 onMounted(() => {
-  // Global reveal animation untuk section-section yang membutuhkan trigger scroll tambahan
-  gsap.utils.toArray('.global-reveal').forEach((el) => {
-    gsap.from(el, {
-      y: 40,
-      opacity: 0,
-      duration: 1,
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 85%',
-        toggleActions: 'play none none reverse'
-      }
-    })
-  })
+  reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-  window.addEventListener('mousemove', moveDirectionalCursor)
-  window.addEventListener('mouseleave', hideDirectionalCursor)
-  cursorAnimationFrame = window.requestAnimationFrame(renderDirectionalCursor)
+  if (!reducedMotion) {
+    gsap.utils.toArray('.global-reveal').forEach((el) => {
+      gsap.from(el, {
+        y: 40,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+          toggleActions: 'play none none reverse'
+        }
+      })
+    })
+
+    window.addEventListener('mousemove', moveDirectionalCursor)
+    window.addEventListener('mouseleave', hideDirectionalCursor)
+    cursorAnimationFrame = window.requestAnimationFrame(renderDirectionalCursor)
+  }
 })
 
 onUnmounted(() => {
@@ -103,11 +112,13 @@ onUnmounted(() => {
 </script>
 
 <template>
+  <a href="#main-content" class="skip-link">{{ t('a11y.skip_to_content') }}</a>
+
   <div class="min-h-screen bg-bg-dark text-white font-sans transition-colors duration-300 antialiased selection:bg-accent selection:text-bg-dark">
     <div ref="cursorRef" class="direction-cursor" aria-hidden="true"></div>
     <Navbar />
-    
-    <main>
+
+    <main id="main-content" tabindex="-1">
       <Hero />
       <About />
       <Skills />
@@ -116,7 +127,7 @@ onUnmounted(() => {
       <Certificates />
       <Contact />
     </main>
-    
+
     <Footer />
   </div>
 </template>

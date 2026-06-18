@@ -1,4 +1,17 @@
 {
+  "seo": {
+    "title": "Rafli Aulia Al Giffari | Fullstack Developer",
+    "description": "Portfolio Rafli Aulia Al Giffari — Fullstack Developer & AI Enthusiast. Spesialisasi web application, Laravel, Vue.js, dan integrasi AI."
+  },
+  "a11y": {
+    "skip_to_content": "Lewati ke konten utama",
+    "open_menu": "Buka menu navigasi",
+    "close_menu": "Tutup menu navigasi",
+    "mobile_menu": "Menu navigasi",
+    "language_switcher": "Pilih bahasa",
+    "switch_dark": "Aktifkan mode gelap",
+    "switch_light": "Aktifkan mode terang"
+  },
   "nav": {
     "about": "TENTANG",
     "skills": "KEAHLIAN",
@@ -80,13 +93,8 @@
     "view": "LIHAT SERTIFIKAT",
     "items": {
       "cert_1": {
-        "title": "Pengembangan Web Fullstack Lanjutan",
-        "issuer": "HackerRank",
-        "date": "2025"
-      },
-      "cert_2": {
-        "title": "Dasar Rekayasa Generative AI",
-        "issuer": "DeepLearning.AI",
+        "title": "UI/UX Design With Figma",
+        "issuer": "Figma Camp Indonesia Batch 6",
         "date": "2025"
       }
     }
@@ -100,7 +108,11 @@
       "name": "NAMA ANDA",
       "email": "EMAIL ANDA",
       "message": "PESAN ANDA",
-      "send": "KIRIM PESAN"
+      "send": "KIRIM PESAN",
+      "sending": "MENGIRIM...",
+      "success": "Pesan berhasil dikirim! Terima kasih.",
+      "error": "Gagal mengirim pesan. Silakan coba lagi nanti.",
+      "not_configured": "Layanan email belum dikonfigurasi. Silakan hubungi langsung via email."
     }
   },
   "footer": {

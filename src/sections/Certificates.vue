@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n'
 import { ArrowUpRight, Award } from 'lucide-vue-next'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { shouldAnimate } from '../utils/motion'
 
 gsap.registerPlugin(ScrollTrigger)
 const certSection = ref(null)
@@ -15,7 +16,9 @@ const certificates = [
 ]
 
 onMounted(() => {
-  const ctx = gsap.context(() => {
+  if (!shouldAnimate()) return
+
+  gsap.context(() => {
     gsap.from('.cert-reveal', {
       y: 30,
       duration: 0.8,
@@ -45,6 +48,7 @@ onMounted(() => {
           :key="idx"
           :href="cert.url"
           target="_blank"
+          rel="noopener noreferrer"
           class="cert-reveal group flex min-h-32 sm:min-h-40 flex-col justify-between bg-bg-card light-surface border border-white/10 p-5 sm:p-6 hover:border-accent/40 hover:bg-accent-muted transition-all duration-300"
         >
           <div class="flex items-start gap-4">

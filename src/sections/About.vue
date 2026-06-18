@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { shouldAnimate } from '../utils/motion'
 
 gsap.registerPlugin(ScrollTrigger)
 const aboutSection = ref(null)
@@ -10,7 +11,9 @@ const aboutSection = ref(null)
 const { t } = useI18n()
 
 onMounted(() => {
-  const ctx = gsap.context(() => {
+  if (!shouldAnimate()) return
+
+  gsap.context(() => {
     gsap.from('.about-reveal', {
       opacity: 0,
       y: 40,
@@ -70,6 +73,7 @@ onMounted(() => {
           <img 
             src="/foto_rafli.jpeg" 
             alt="Rafli Aulia Al Giffari" 
+            loading="lazy"
             class="w-full h-full object-cover brightness-95 rounded-lg gold-border-glow"
           />
         </div>
